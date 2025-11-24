@@ -1,0 +1,22 @@
+name: pew-actions/setup-pewbuild
+description: Setup the pewbuild toolkit
+
+inputs:
+  version:
+    description: 'Version of pewbuild to install'
+    required: false
+    default: 'latest'
+  token:
+    description: 'GitHub token for accessing private repository release'
+    required: true
+
+outputs:
+  pewbuild-path:
+    description: 'Path where pewbuild.exe is installed'
+  pewbuild-version:
+    description: 'Version of pewbuild installed'
+
+runs:
+  using: node24
+  main: dist/index.js
+  post: dist/index.js
